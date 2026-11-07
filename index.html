@@ -1,0 +1,250 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Una sorpresa especial | Spider-Man</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="web-overlay"></div>
+  <div class="cinematic-light"></div>
+
+  <!-- CUENTA REGRESIVA -->
+  <section id="countdown" class="screen active">
+    <div class="scene-number">01 / UNA SORPRESA</div>
+    <div class="spider-logo">
+      <img src="./img/images 1.png" alt="" onerror="this.style.display='none'">
+    </div>
+    <p class="eyebrow">ALGO ESPECIAL TE ESPERA</p>
+    <h1>Prepárate...</h1>
+    <div id="number">3</div>
+    <p class="small-text">La sorpresa está por comenzar</p>
+  </section>
+
+  <!-- BIENVENIDA -->
+  <section id="welcome" class="screen">
+    <div class="scene-number">02 / EL MENSAJE</div>
+    <p class="eyebrow">ARCHIVO CONFIDENCIAL</p>
+    <h1>Tienes un mensaje</h1>
+
+    <div class="envelope" id="envelope">
+      <div class="envelope-back"></div>
+      <div class="envelope-paper"></div>
+      <div class="envelope-flap"></div>
+      <div class="envelope-front"></div>
+      <div class="envelope-seal">S</div>
+    </div>
+
+    <p class="small-text">Parece que alguien te ha dejado una sorpresa...</p>
+    <button id="startBtn" class="main-btn hidden" onclick="goTo('cards')">
+      DESCUBRIR SORPRESA
+    </button>
+  </section>
+
+  <!-- TARJETAS -->
+  <section id="cards" class="screen">
+    <div class="scene-number">03 / LOS REGALOS</div>
+    <p class="eyebrow">CUATRO PEQUEÑOS SECRETOS</p>
+    <h1>Elige una sorpresa</h1>
+
+    <div class="gift-container">
+      <button class="gift" onclick="showGift(0)">
+        <span>01</span><small>UN MENSAJE</small>
+      </button>
+      <button class="gift" onclick="showGift(1)">
+        <span>02</span><small>UN RECUERDO</small>
+      </button>
+      <button class="gift" onclick="showGift(2)">
+        <span>03</span><small>UNA SONRISA</small>
+      </button>
+      <button class="gift" onclick="showGift(3)">
+        <span>04</span><small>ALGO ESPECIAL</small>
+      </button>
+    </div>
+
+    <div id="giftMessage" class="gift-modal hidden">
+      <div class="gift-modal-content">
+        <button class="close-btn" onclick="closeGift()">×</button>
+        <p class="eyebrow">MENSAJE SECRETO</p>
+        <h2>Para ti</h2>
+        <p id="giftText"></p>
+      </div>
+    </div>
+
+    <button class="secondary-btn" onclick="goTo('music')">CONTINUAR</button>
+  </section>
+
+  <!-- MÚSICA -->
+  <section id="music" class="screen">
+    <div class="scene-number">04 / LA CANCIÓN</div>
+    <p class="eyebrow">UNA CANCION QUE ME RECUERDA MUCHO A TI</p>
+    <h1>Si te preguntas porque esta cancion me recuerda a ti,
+        No es solo por lo que dice, es por el sentimiento y nostalgia que tengo hacia ti.
+    </h1>
+
+    <div class="record">
+      <div class="record-center">S</div>
+    </div>
+
+    <div class="song-info">
+      <h2 id="songTitle">Canción especial para tu               </h2>
+      <p id="songArtist">Para este momento</p>
+    </div>
+
+    <audio id="audio"></audio>
+
+    <div class="music-controls">
+      <button onclick="previousSong()" aria-label="Canción anterior">|◀</button>
+      <button id="playBtn" class="play-btn" onclick="toggleMusic()">▶</button>
+      <button onclick="nextSong()" aria-label="Canción siguiente">▶|</button>
+    </div>
+
+    <div class="progress-container">
+      <span id="currentTime">0:00</span>
+      <input type="range" id="progress" value="0" min="0" max="100">
+      <span id="duration">0:00</span>
+    </div>
+
+    <button class="secondary-btn" onclick="goTo('gallery')">VER RECUERDOS</button>
+  </section>
+
+ 
+
+<!-- GALERÍA -->
+<section id="gallery" class="screen">
+  <div class="scene-number">05 / LOS RECUERDOS</div>
+  <p class="eyebrow">MOMENTOS QUE MERECEN QUEDARSE</p>
+  <h1>Una pequeña galería</h1>
+
+  <div class="gallery-grid">
+
+    <div class="photo">
+      <img src="./img/foto1.jpg.jpg" alt="Fotografía 1">
+      <p>Primera foto contigo JAJAJA</p>
+    </div>
+
+    <div class="photo">
+      <img src="./img/foto2.jpg" alt="Fotografía 2">
+      <p>Momento bonito</p>
+    </div>
+
+    <div class="photo">
+      <img src="./img/foto3.jpg" alt="Fotografía 3">
+      <p>Amando tus ojos chinos :(</p>
+    </div>
+
+    <div class="photo">
+      <img src="./img/foto4.jpg" alt="Fotografía 4">
+      <p>Ojitosss</p>
+    </div>
+
+    <div class="photo">
+      <img src="./img/foto5.jpg" alt="Fotografía 5">
+      <p>Cuando te di el primer detalle</p>
+    </div>
+
+    <div class="photo">
+      <img src="./img/foto6.jpg" alt="Fotografía 6">
+      <p>Siempre seras un</p>
+    </div>
+
+    <div class="photo">
+      <img src="./img/foto7.jpg" alt="Fotografía 7">
+      <p>niño con un gran corazon</p>
+    </div>
+
+    <div class="photo">
+      <img src="./img/foto8.jpg" alt="Fotografía 8">
+      <p>y me alegro de haberte conocido</p>
+    </div>
+
+    <div class="photo">
+      <img src="./img/foto9.jpg" alt="Fotografía 9">
+      <p>loviuuu</p>
+    </div>
+
+  <div class="photo">
+  <video controls>
+    <source src="./img/foto10.mp4" type="video/mp4">
+    Tu navegador no puede reproducir este video.
+  </video>
+  <p>Eres una personita muy especial</p>
+</div>
+
+  </div>
+
+  <button class="secondary-btn" onclick="goTo('reasons')">
+    CONTINUAR
+  </button>
+</section>
+
+
+  <!-- RAZONES -->
+  <section id="reasons" class="screen">
+    <div class="scene-number">06 / SEIS RAZONES</div>
+    <p class="eyebrow">PEQUEÑOS DETALLES</p>
+    <h1>Algunas razones</h1>
+
+    <div id="reasonList" class="reason-list"></div>
+
+    <div class="spider-character">
+      <img src="imagenes/spiderman-lateral.png" alt="" onerror="this.style.display='none'">
+    </div>
+
+    <button class="secondary-btn" onclick="goTo('letter')">LEER CARTA</button>
+  </section>
+
+  <!-- CARTA -->
+  <section id="letter" class="screen">
+    <div class="scene-number">07 / UNA CARTA</div>
+    <p class="eyebrow">UNAS PALABRAS PARA TI</p>
+
+    <div class="letter-paper">
+      <div class="letter-decoration">S</div>
+      <h1 id="letterTitle">Algo que quiero que recuerdes</h1>
+      <div id="letterContent"></div>
+    </div>
+
+    <button class="secondary-btn" onclick="goTo('final')">DESCUBRIR EL FINAL</button>
+  </section>
+
+  <!-- FINAL -->
+  <section id="final" class="screen">
+    <div class="scene-number">08 / FIN DEL RECORRIDO</div>
+
+    <div class="final-spider">
+      <img src="imagenes/spiderman-final.png" alt="" onerror="this.style.display='none'">
+    </div>
+
+    <p class="eyebrow">MISIÓN COMPLETADA</p>
+    <h1>Esta sorpresa es para ti</h1>
+    <p class="final-message">
+      Porque hay personas que hacen especiales hasta los momentos más sencillos.
+    </p>
+
+    <button class="main-btn" onclick="revealSecret()">UN ÚLTIMO SECRETO</button>
+    <p id="secretMessage" class="secret-message hidden">
+      Nunca olvides lo especial que eres. ❤️
+    </p>
+
+    <button class="secondary-btn" onclick="restart()">VOLVER A COMENZAR</button>
+  </section>
+
+  <!-- AMPLIAR FOTOGRAFÍAS -->
+  <div id="lightbox" class="lightbox hidden" onclick="closeLightbox()">
+    <button class="lightbox-close" aria-label="Cerrar">×</button>
+    <img id="lightboxImage" src="" alt="Fotografía ampliada">
+    <p id="lightboxCaption"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
